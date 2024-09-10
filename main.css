@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#kontener {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 15% 70% 15%;
+    height: 100vh;
+    width: 100vw;
+    font-family: Righteous;
+    color: white;
+}
+
+#banner {
+    background-color: white;
+    grid-template-columns: 70px 1fr 7fr 2fr 3fr 4fr;
+    grid-template-rows: 25px 1fr 1fr 1fr 25px;
+    display: grid;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.banner-logo {
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 1;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr;
+    display: grid;
+}
+
+.logo-cell1 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    background-color: aqua;
+    color: black;
+    font-family: "Bebas Neue";
+    font-size: 1.3em;
+}
+
+.logo-cell2 {
+    grid-row: 2 / span 1;
+    color: black;
+    font-size: 1.3em;
+}
+
+.logo-cell2 img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.banner-title {
+    background-color: #30363cff;
+    grid-column: span 3 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    justify-content: left;
+    padding-left: 20px;
+    font-size: 2em;
+}
+
+.banner-bottom {
+    color: #060d14ff;
+    grid-column: 2 / span 4;
+    grid-row: 4 / span 1;
+    grid-template-columns: repeat(8, 1fr);
+    font-size: 1em;
+    display: grid;
+}
+
+.banner-bottom-cell1 {
+    grid-column: 1 / 3;
+    grid-row-start: 1;
+}
+
+.banner-bottom-cell2 {
+    grid-column: 3 / 4;
+    grid-row-start: 1;
+}
+
+.banner-bottom-cell3 {
+    grid-column: 4 / 5;
+    grid-row-start: 1;
+}
+
+.box1 {
+    background-color: green; /* Sekcja A */
+}
+
+.box2 {
+    background-color: yellow; /* Sekcja B */
+}
+
+.box3 {
+    background-color: orange; /* Sekcja C */
+}
+
+.box4 {
+    background-color: peachpuff; /* Sekcja D */
+}
+
+.box5 {
+    background-color: lightcoral; /* Sekcja E */
+}
+
+#pad {
+    background-color: green;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+#footer {
+    background-color: blue;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    grid-template-columns: 610px 1fr 2fr 610px;
+    grid-template-rows: 65px 1fr 25px;
+    display: grid;
+}
+
+#buy
+{
+    background-color: #ff3030ff;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25em;
+}
+
+#price
+{
+    background-color: #942a2aff;
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25em;
+}
+
+#panel {
+    background-color: yellow;
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+    grid-template-columns: 0.5fr repeat(6, 1fr) 0.5fr;
+    grid-template-rows: 25px 1fr 0.5fr 1.5fr repeat(11, 1fr) 25px;
+
+    display: grid;
+}
+
+.topbox, .topbox2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbox2 {
+    font-size: 0.75em;
+}
+
+#taskbar {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 6;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    display: grid; 
+}
+
+#topbar {
+    background-color: rgb(224, 224, 224);
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 6;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    display: grid;
+    margin-top: 5px; 
+}
+
+#list {
+    background-color: #060d14d3;
+    grid-row: 4 / span 10;
+    grid-column: 2 / span 6;
+}
+
+#colors {
+    background-color: #060d14f1;
+    grid-row: 14 / span 2;
+    grid-column: 2 / span 6;
+    grid-template-rows: 10px 1fr 1fr 20px;
+    grid-template-columns: 20px 1fr 20px;
+    gap: 5px;
+    display: grid; 
+}
+
+.task-cell1 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.task-cell2 {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.task-cell3 {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.task-cell4 {
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.task-cell5 {
+    grid-row: 1 / span 1;
+    grid-column: 5 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.task-cell6 {
+    grid-row: 1 / span 1;
+    grid-column: 6  / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.task-cell1 img, .task-cell2 img, .task-cell3 img, .task-cell4 img, .task-cell5 img, .task-cell6 img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.task-cell1:hover, .task-cell2:hover, .task-cell3:hover, .task-cell4:hover, .task-cell5:hover, .task-cell6:hover {
+    background-color: #0f3859ff;
+}
+
+.top-cell1 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.top-cell2 {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.top-cell3 {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.top-cell4 {
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.top-cell5 {
+    grid-row: 1 / span 1;
+    grid-column: 5 / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.top-cell6 {
+    grid-row: 1 / span 1;
+    grid-column: 6  / span 1;
+    background-color: #060d14ff;
+    color: white;
+}
+
+.top-cell1:hover, .top-cell2:hover, .top-cell3:hover, .top-cell4:hover, .top-cell5:hover, .top-cell6:hover {
+    background-color: #2384d5ff;
+}
+
+#color-head {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    font-size: 1.5em;
+}
+
+#colorbar {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    display: grid; 
+}
+
+.colorbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+.color-cell1 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    background-color: white;
+    color: white;
+}
+
+.color-cell2 {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    background-color: gray;
+    color: gray;
+}
+
+.color-cell3 {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+    background-color: black;
+    color: black;
+}
+
+.color-cell4 {
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+    background-color: red;
+    color: red;
+}
+
+.color-cell5 {
+    grid-row: 1 / span 1;
+    grid-column: 5 / span 1;
+    background-color: green;
+    color: green;
+}
+
+.color-cell6 {
+    grid-row: 1 / span 1;
+    grid-column: 6 / span 1;
+    background-color: blue;
+    color: blue;
+}
+
+.color-cell7 {
+    grid-row: 1 / span 1;
+    grid-column: 7 / span 1;
+    background-color: goldenrod;
+    color: goldenrod;
+}
+
+.color-cell1:hover {
+    color: black;
+}
+
+.color-cell1:active {
+    color: black;
+}
+
+.color-cell2:hover, .color-cell3:hover, .color-cell4:hover, .color-cell5:hover, .color-cell6:hover, .color-cell7:hover {
+    color: white;
+}
+
+.color-cell2:focus, .color-cell3:active, .color-cell4:active, .color-cell5:active, .color-cell6:active, .color-cell7:active {
+    color: white;
+}
+
+#pad {
+    grid-template-rows: 25px 7fr 1fr 25px;
+    grid-template-columns: 70px 1fr 1fr 70px;
+    display: grid;
+}
+
+.product {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 2;
+    background-color: aqua;
+    
+}
+
+.product-left {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+    background-color: white;
+}
+
+.product-right {
+    grid-row: 3 / span 1;
+    grid-column: 3 / span 1;
+    background-color:  white;
+}
+
+.product img, .product-left img, .product-right img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
