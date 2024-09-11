@@ -12,7 +12,7 @@ html, body {
 #kontener {
     display: grid;
     grid-template-columns: 75% 25%;
-    grid-template-rows: 15% 70% 15%;
+    grid-template-rows: 13% 75% 12%;
     height: 100vh;
     width: 100vw;
     font-family: Righteous;
@@ -21,7 +21,7 @@ html, body {
 
 #banner {
     background-color: white;
-    grid-template-columns: 70px 1fr 7fr 2fr 3fr 4fr;
+    grid-template-columns: 40px 1fr 5fr 5fr 7fr 7fr;
     grid-template-rows: 25px 1fr 1fr 1fr 25px;
     display: grid;
 }
@@ -30,7 +30,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .banner-logo {
@@ -44,10 +44,10 @@ html, body {
 .logo-cell1 {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
-    background-color: aqua;
+    /* background-color: aqua; */
     color: black;
     font-family: "Bebas Neue";
-    font-size: 1.3em;
+    font-size: 0.8em;
 }
 
 .logo-cell2 {
@@ -57,8 +57,8 @@ html, body {
 }
 
 .logo-cell2 img {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    max-height: 95%;
     object-fit: contain;
 }
 
@@ -70,14 +70,14 @@ html, body {
     grid-row-start: 2;
     justify-content: left;
     padding-left: 20px;
-    font-size: 2em;
+    font-size: 1.75em;
 }
 
 .banner-bottom {
     color: #060d14ff;
     grid-column: 2 / span 4;
     grid-row: 4 / span 1;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr 6fr;
     font-size: 1em;
     display: grid;
 }
@@ -97,65 +97,69 @@ html, body {
     grid-row-start: 1;
 }
 
-.box1 {
-    background-color: green; /* Sekcja A */
-}
-
-.box2 {
-    background-color: yellow; /* Sekcja B */
-}
-
-.box3 {
-    background-color: orange; /* Sekcja C */
-}
-
-.box4 {
-    background-color: peachpuff; /* Sekcja D */
-}
-
-.box5 {
-    background-color: lightcoral; /* Sekcja E */
-}
-
 #pad {
-    background-color: green;
+    /* background-color: green; */
     grid-row: 2 / 3;
     grid-column: 1 / 2;
 }
 
 #footer {
-    background-color: blue;
+    /* background-color: blue; */
     grid-row: 3 / 4;
     grid-column: 1 / 2;
-    grid-template-columns: 610px 1fr 2fr 610px;
-    grid-template-rows: 65px 1fr 25px;
+    grid-template-rows: 25px 1fr 25px;
+    grid-template-columns: 210px 5fr 1fr 2fr 5fr 210px;
     display: grid;
+}
+
+.footerbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rotate-left {
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 1;
+    background-color: white;
+}
+
+.rotate-right {
+    grid-row: 1 / span 3;
+    grid-column: 5 / span 1;
+    background-color: white;
+}
+
+.rotate-left img, .rotate-right img{
+    width: 50%;
+    height: auto;
+    object-fit: contain;
 }
 
 #buy
 {
     background-color: #ff3030ff;
     grid-row: 2 / span 1;
-    grid-column: 2 / span 1;
+    grid-column: 3 / span 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25em;
+    font-size: 1.75em;
 }
 
 #price
 {
     background-color: #942a2aff;
     grid-row: 2 / span 1;
-    grid-column: 3 / span 1;
+    grid-column: 4 / span 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25em;
+    font-size: 1.75em;
 }
 
 #panel {
-    background-color: yellow;
+    /* background-color: yellow; */
     grid-row: 1 / 4;
     grid-column: 2 / 3;
     grid-template-columns: 0.5fr repeat(6, 1fr) 0.5fr;
@@ -400,14 +404,19 @@ html, body {
     display: grid;
 }
 
-.product {
-    grid-row: 2 / span 1;
-    grid-column: 2 / span 2;
-    background-color: aqua;
-    
+.padbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.product-left {
+.product {
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 2;
+    /* background-color: aqua;   */
+}
+
+/* .product-left {
     grid-row: 3 / span 1;
     grid-column: 2 / span 1;
     background-color: white;
@@ -417,10 +426,16 @@ html, body {
     grid-row: 3 / span 1;
     grid-column: 3 / span 1;
     background-color:  white;
+} */
+
+.product img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
 }
 
-.product img, .product-left img, .product-right img {
-    width: 40%;
+.product-left img, .product-right img {
+    width: 30%;
     height: auto;
     object-fit: contain;
 }
