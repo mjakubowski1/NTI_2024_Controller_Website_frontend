@@ -201,43 +201,94 @@ html, body {
     display: grid;
 }
 
-.list-cell1 {
+#account {
+    background-color: #060d14d3;
+    grid-row: 4 / span 10;
+    grid-column: 2 / span 6;
+    grid-template-rows: 10px 1fr 1fr 2fr 20px;
+    grid-template-columns: 10px 1fr 1fr 10px;
+    display: none;
+}
+
+#loginForm {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+    /* background-color: green; */
+    font-size: 1.5em;
+}
+
+#username, #password {
+    height: 30px;
+    width: 250px;
+}
+
+#login {
+    height: 55px;
+    width: 100px;
+    font-family: Righteous;
+    font-size: 1em;
+    background-color: #022d5e;
+    color: white;
+}
+
+#order {
+    background-color: #aa2807;
+    grid-row: 4 / span 10;
+    grid-column: 2 / span 6;
+    grid-template-rows: 10px repeat(3, 1fr) 20px;
+    grid-template-columns: 1fr 1fr;
+    display: none;
+}
+
+.type-cell1 {
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
     /* background-color: white; */
 }
 
-.list-cell2 {
+.type-cell2 {
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
     /* background-color: rgb(30, 255, 0); */
 }
 
-.list-cell3 {
+.type-cell3 {
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
     /* background-color: rgb(4, 184, 255); */
 }
 
-.list-cell4 {
+.type-cell4 {
     grid-row: 3 / span 1;
     grid-column: 2 / span 1;
     /* background-color: rgb(0, 217, 255); */
 }
 
-.list-cell5 {
+.type-cell5 {
     grid-row: 4 / span 1;
     grid-column: 1 / span 1;
     /* background-color: white; */
 }
 
-.list-cell6 {
+.type-cell6 {
     grid-row: 4 / span 1;
     grid-column: 2 / span 1;
     /* background-color: rgb(30, 255, 0); */
 }
 
-.list-cell1, .list-cell2, .list-cell3, .list-cell4, .list-cell5, .list-cell6 {
+.cable-cell1 {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    font-size: 2em;
+}
+
+.cable-cell2 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+    font-size: 2em;
+}
+
+.type-cell1, .type-cell2, .type-cell3, .type-cell4, .type-cell5, .type-cell6, .cable-cell1, .cable-cell2 {
     grid-template-rows: 30px 3fr 1fr 30px;
     grid-template-columns: 30px 1fr 30px;
     display: grid;
