@@ -6,6 +6,16 @@ document.querySelector(`.top-cell1`).style.backgroundColor = '#0a8cf7';
         document.querySelectorAll('[class^="type-cell"]').forEach(function(element) {
         element.style.display = 'grid';});
 
+        
+        function menu() {
+            const element = document.querySelector('.banner-bottom');
+            
+            if (element.style.display === 'none') {
+                element.style.display = 'grid';
+            } else {
+                element.style.display = 'none';
+            }
+        }
 
         function setTab(number) {
             for (let i = 1; i <= 6; i++) {
