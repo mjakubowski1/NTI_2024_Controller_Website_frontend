@@ -62,6 +62,10 @@ html, body {
     object-fit: contain;
 }
 
+.logo-cell2:hover img.hover-image {
+    content: url('bar-hover.png'); /* Zmieniony obraz na hover */
+}
+
 .banner-title {
     background-color: #30363cff;
     grid-column: span 3 / span 2;
