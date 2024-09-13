@@ -20,7 +20,7 @@
                 <div class="box banner-bottom-cell1">CUSTOM YOUR CONTROLER</div>
                 <div class="box banner-bottom-cell2">CONTACT</div>
                 <div class="box banner-bottom-cell3">HELP</div>
-                <div class="box banner-bottom-cell4">ACCOUNT</div>
+                <div class="box banner-bottom-cell4"></div>
             </div>
         </div>
         <div id="pad">Pad
@@ -44,39 +44,60 @@
                 <div class="topbox task-cell6"><img src="shop.png" alt="Shop"></div>
             </div>
             <div id="topbar">
-                <div class="topbox2 top-cell1">TYPE</div>
-                <div class="topbox2 top-cell2">CONTENT</div>
-                <div class="topbox2 top-cell3">FACE</div>
-                <div class="topbox2 top-cell4">CABLE</div>
-                <div class="topbox2 top-cell5">EXTRA</div>
-                <div class="topbox2 top-cell6">ORDER</div>
+                <div class="topbox2 top-cell1" onclick="setTab(1)">TYPE</div>
+                <div class="topbox2 top-cell2" onclick="setTab(2)">CONTENT</div>
+                <div class="topbox2 top-cell3" onclick="setTab(3)">BUTTONS</div>
+                <div class="topbox2 top-cell4" onclick="setTab(4)">CABLE</div>
+                <div class="topbox2 top-cell5" onclick="setTab(5)">ACCOUNT</div>
+                <div class="topbox2 top-cell6" onclick="setTab(6)">ORDER</div>
             </div>
             <div id="list">
-                <div class="list-cell1">
+                <div class="type-cell1 list-option">
                     <div class="topbox list-logo"><img src="list1.png"></div>
                     <div class="topbox list-text">DUALSENSE</div>
                 </div>
-                <div class="list-cell2">
+                <div class="type-cell2 list-option">
                     <div class="topbox list-logo"><img src="list2.png"></div>
                     <div class="topbox list-text">XBOX ONE</div>
                 </div>
-                <div class="list-cell3">
+                <div class="type-cell3 list-option">
                     <div class="topbox list-logo"><img src="list3.png"></div>
                     <div class="topbox list-text">NINTENDO SWITCH</div>
                 </div>
-                <div class="list-cell4">
+                <div class="type-cell4 list-option">
                     <div class="topbox list-logo"><img src="list4.png"></div>
                     <div class="topbox list-text">WII U PRO</div>
                 </div>
-                <div class="list-cell5">
+                <div class="type-cell5 list-option">
                     <div class="topbox list-logo"><img src="list5.png"></div>
                     <div class="topbox list-text">DUALSHOCK</div>
                 </div>
-                <div class="list-cell6">
+                <div class="type-cell6 list-option">
                     <div class="topbox list-logo"><img src="list6.png"></div>
                     <div class="topbox list-text">XBOX 360</div>
                 </div>
+                <div class="cable-cell1 list-option">
+                    <div class="topbox list-logo"><img src="list1.png"></div>
+                    <div class="topbox list-text">WITH CABLE</div>
+                </div>
+                <div class="cable-cell2 list-option">
+                    <div class="topbox list-logo"><img src="list2.png"></div>
+                    <div class="topbox list-text">WITHOUT CABLE</div>
+                </div>
             </div>
+            <div id="account">
+                <form id="loginForm">
+                    <label for="username">USERNAME</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+        
+                    <label for="password">PASSWORD</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+        
+                    <button type="submit" id="login">LOGIN</button>
+                    <div class="error-message" id="error-message"></div>
+                </form>
+            </div>
+            <div id="order"></div>
             <div id="colors">
                 <div id="color-head">COLOR</div>
                 <div id="colorbar">
@@ -91,5 +112,69 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        document.querySelector(`.top-cell1`).style.backgroundColor = '#0a8cf7';
+
+        document.querySelectorAll('.list-option').forEach(function(element) {
+        element.style.display = 'none';});
+
+        document.querySelectorAll('[class^="type-cell"]').forEach(function(element) {
+        element.style.display = 'grid';});
+
+
+        function setTab(number) {
+            for (let i = 1; i <= 6; i++) {
+                document.querySelector(`.top-cell${i}`).style.backgroundColor = 'black';
+            }
+
+            document.querySelector(`.top-cell${number}`).style.backgroundColor = '#0a8cf7';
+
+            document.querySelectorAll('.list-option').forEach(function(element) {
+            element.style.display = 'none';
+            });
+
+            if (number == 5 || number == 6) {
+                document.getElementById("list").style.display = 'none';
+            } else {
+                document.getElementById("list").style.display = 'grid';
+            }
+
+            if (number == 5) {
+                document.getElementById("account").style.display = 'grid';
+            } else {
+                document.getElementById("account").style.display = 'none';
+            }
+
+            if (number == 6) {
+                document.getElementById("order").style.display = 'grid';
+            } else {
+                document.getElementById("order").style.display = 'none';
+            }
+   
+            if (number == 1) {
+                document.querySelectorAll('[class^="type-cell"]').forEach(function(element) {
+                element.style.display = 'grid';});
+            } else if (number == 2) {
+                document.querySelectorAll('[class^="content-cell"]').forEach(function(element) {
+                element.style.display = 'grid';});
+            } else if (number == 3) {
+                document.querySelectorAll('[class^="buttons-cell"]').forEach(function(element) {
+                element.style.display = 'grid';});
+            } else if (number == 4) {
+                document.querySelectorAll('[class^="cable-cell"]').forEach(function(element) {
+                element.style.display = 'grid';});
+            } else if (number == 5) {
+                document.querySelectorAll('[class^="account-cell"]').forEach(function(element) {
+                element.style.display = 'grid';});
+            } else if (number == 6) {
+                document.querySelectorAll('[class^="order-cell"]').forEach(function(element) {
+                element.style.display = 'grid';});
+            }
+        }
+        
+    </script>
+
 </body>
 </html>
