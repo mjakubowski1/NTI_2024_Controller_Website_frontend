@@ -1,4 +1,4 @@
-    document.querySelector(`.top-cell1`).style.backgroundColor = '#0a8cf7';
+    document.querySelector(`.task-cell1`).classList.add('active');
 
     document.querySelectorAll('.list-option').forEach(function(element) {
     element.style.display = 'none';});
@@ -7,6 +7,46 @@
     element.style.display = 'grid';});
 
     document.querySelector('.title1').style.display = 'grid';
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        login(username, password);
+    });
+
+    function login(username, password) {
+        console.log('Username:', username);
+        console.log('Password:', password);
+        
+        if (username === 'client' && password === '1234') {
+            document.getElementById("account-emoji").style.display = 'none';
+            document.getElementById("account-text").style.display = 'none';
+            document.getElementById("loginForm").style.display = 'none';
+            document.getElementById("account").style.backgroundColor = '#238605';
+            document.getElementById("account-emoji-success").style.display = 'grid';
+            document.getElementById("account-text-success").style.display = 'grid';
+        } else {
+            document.getElementById('error-message').textContent = 'Invalid username or password';
+        }
+    }
+
+    function logout() {
+        console.log('Username:', username);
+        console.log('Password:', password);
+        
+        if (username === 'client' && password === '1234') {
+            document.getElementById("account-emoji").style.display = 'none';
+            document.getElementById("account-text").style.display = 'none';
+            document.getElementById("account").style.backgroundColor = '#238605';
+            document.getElementById("account-emoji-success").style.display = 'grid';
+            document.getElementById("account-text-success").style.display = 'grid';
+        } else {
+            document.getElementById('error-message').textContent = 'Invalid username or password';
+        }
+    }
 
 
     function menu() {
@@ -28,10 +68,11 @@
 
     function setTab(number) {
         for (let i = 1; i <= 6; i++) {
-            document.querySelector(`.top-cell${i}`).style.backgroundColor = 'black';
+            document.querySelector(`.task-cell${i}`).classList.remove('active');
         }
+        document.querySelector(`.task-cell${number}`).classList.add('active');
 
-        document.querySelector(`.top-cell${number}`).style.backgroundColor = '#0a8cf7';
+
 
         document.querySelectorAll('.list-option').forEach(function(element) {
         element.style.display = 'none';

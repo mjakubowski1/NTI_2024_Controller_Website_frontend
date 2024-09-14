@@ -77,6 +77,10 @@ html, body {
     font-size: 1.75em;
 }
 
+.title-option {
+    display: none;
+}
+
 .banner-bottom {
     color: #060d14ff;
     grid-column: 2 / span 4;
@@ -203,6 +207,10 @@ html, body {
     grid-template-rows: 10px repeat(3, 1fr) 20px;
     grid-template-columns: 1fr 1fr;
     display: grid;
+}
+
+.cable-cell1, .cable-cell2 {
+    display: none;
 }
 
 #account {
