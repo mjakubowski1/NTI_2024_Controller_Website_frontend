@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="kontener">
-        <div id="banner">Banner
+        <div id="banner">
             <div class="banner-logo">
                 <div class="box logo-cell1">GDESIGN</div>
-                <div class="box logo-cell2"><img src="bar.png" alt="Bar Logo" class="hover-image" onclick="menu()"></div>
+                <div class="box logo-cell2"><img src="bar.png" alt="Bar Logo" class="hover-image" id="barclicked" onclick="menu()"></div>
             </div>
             <div class="box banner-title">
                 <a class="title1 title-option">CUSTOM YOUR CONTROLER</a> 
@@ -24,18 +24,19 @@
                 <div class="box banner-bottom-cell3" onclick="setPage(3)">HELP</div>
             </div>
         </div>
-        <div id="pad">Pad
-            <div class="padbox product">content<img src="example.png" alt="Product Image"></div>
+        <div id="pad">
+            <div class="padbox product"><img src="example.png" alt="Product Image"></div>
             <!--<div class="padbox product-left"><img src="left.png" alt="Left"></div>
             <div class="padbox product-right"><img src="right.png" alt="Right"></div> -->
         </div>
-        <div id="footer">Footer
-            <div class = "footerbox rotate-left"><img src="left.png" alt="Left"></div>
+        <div id="footer">
+            <div id = "moon"><img src="moon.png" alt="Moon" class="hover-moon" id="moonclicked" onclick="night()"></div>
+            <div class = "footerbox rotate-left"><img src="left.png" alt="Left" class="hover-left" id="leftclicked"></div>
             <div id="buy">BUY</div>
             <div id="price">1000 ZŁ</div>
-            <div class = "footerbox rotate-right"><img src="right.png" alt="Left"></div>
+            <div class = "footerbox rotate-right"><img src="right.png" alt="Right" class="hover-right" id="rightclicked"></div>
         </div>
-        <div id="panel">Panel
+        <div id="panel">
             <div id="taskbar">
                 <div class="task-cell1" onclick="setTab(1)">
                     <div class="topbox task-logo"><img src="type.png" alt="Type"></div>
@@ -66,7 +67,7 @@
             <div id="list">
                 <div class="type-cell1 list-option">
                     <div class="topbox list-logo"><img src="list1.png"></div>
-                    <div class="topbox list-text">DUALSENSE</div>
+                    <div class="topbox list-text">PS5</div>
                 </div>
                 <div class="type-cell2 list-option">
                     <div class="topbox list-logo"><img src="list2.png"></div>
@@ -74,15 +75,15 @@
                 </div>
                 <div class="type-cell3 list-option">
                     <div class="topbox list-logo"><img src="list3.png"></div>
-                    <div class="topbox list-text">NINTENDO SWITCH</div>
+                    <div class="topbox list-text">SWITCH</div>
                 </div>
                 <div class="type-cell4 list-option">
                     <div class="topbox list-logo"><img src="list4.png"></div>
-                    <div class="topbox list-text">WII U PRO</div>
+                    <div class="topbox list-text">WII U</div>
                 </div>
                 <div class="type-cell5 list-option">
                     <div class="topbox list-logo"><img src="list5.png"></div>
-                    <div class="topbox list-text">DUALSHOCK</div>
+                    <div class="topbox list-text">PS4</div>
                 </div>
                 <div class="type-cell6 list-option">
                     <div class="topbox list-logo"><img src="list6.png"></div>

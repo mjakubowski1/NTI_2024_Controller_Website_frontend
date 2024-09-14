@@ -165,8 +165,8 @@ html, body {
     grid-row: 1 / 4;
     grid-column: 2 / 3;
     grid-template-columns: 10px repeat(6, 1fr) 0.25fr 30px;
-    grid-template-rows: 40px 1fr 0.5fr 1.5fr repeat(10, 1fr) 0.75fr 40px;
-
+    grid-template-rows: 40px 0.75fr 0.5fr 1.5fr repeat(10, 1fr) 0.75fr 40px;
+    
     display: grid;
 }
 
@@ -181,27 +181,18 @@ html, body {
 }
 
 #taskbar {
-    grid-row: 2 / span 1;
+    grid-row: 2 / span 2;
     grid-column: 2 / span 6;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(6, 1fr);
-    gap: 5px;
+    column-gap: 2px;
     display: grid; 
-}
-
-#topbar {
-    background-color: rgb(224, 224, 224);
-    grid-row: 3 / span 1;
-    grid-column: 2 / span 6;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5px;
-    display: grid;
-    margin-top: 5px; 
+    font-size: 0.75em;
 }
 
 #list {
     background-color: #060d14d3;
+    margin-top: 2px;
     grid-row: 4 / span 10;
     grid-column: 2 / span 6;
     grid-template-rows: 10px repeat(3, 1fr) 20px;
@@ -215,6 +206,7 @@ html, body {
 
 #account {
     background-color: #011f3f;
+    margin-top: 2px;
     grid-row: 4 / span 10;
     grid-column: 2 / span 6;
     grid-template-rows: 10px 1fr 1fr 3fr 20px;
@@ -244,6 +236,22 @@ html, body {
     font-size: 2em;
     justify-content: center;
     align-items: center;
+}
+
+#account-emoji-success {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    font-size: 4em;
+    display: none;
+}
+
+#account-text-success {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
 #loginForm {
@@ -276,6 +284,7 @@ html, body {
 
 #order {
     background-color: #aa2807;
+    margin-top: 2px;
     grid-row: 4 / span 10;
     grid-column: 2 / span 6;
     grid-template-rows: 10px repeat(3, 1fr) 20px;
@@ -412,9 +421,26 @@ html, body {
     color: white;
 }
 
+.task-cell1, .task-cell2, .task-cell3, .task-cell4, .task-cell5, .task-cell6 {
+    grid-template-rows: 4fr 1fr 5px;
+    grid-template-columns: 1;
+    transition: background-color 0.5s ease;
+    display: grid;
+}
+
+.task-logo {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.task-text {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
+
 .task-cell1 img, .task-cell2 img, .task-cell3 img, .task-cell4 img, .task-cell5 img, .task-cell6 img {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     object-fit: contain;
 }
 
@@ -422,51 +448,14 @@ html, body {
     background-color: #0f3859ff;
 }
 
-.top-cell1 {
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
-    background-color: #060d14ff;
-    color: white;
+.task-cell1.active, .task-cell2.active, .task-cell3.active, .task-cell4.active, .task-cell5.active {
+    background-color: #0a8cf7; 
 }
 
-.top-cell2 {
-    grid-row: 1 / span 1;
-    grid-column: 2 / span 1;
-    background-color: #060d14ff;
-    color: white;
+.task-cell6.active {
+    background-color: #b82006;
 }
 
-.top-cell3 {
-    grid-row: 1 / span 1;
-    grid-column: 3 / span 1;
-    background-color: #060d14ff;
-    color: white;
-}
-
-.top-cell4 {
-    grid-row: 1 / span 1;
-    grid-column: 4 / span 1;
-    background-color: #060d14ff;
-    color: white;
-}
-
-.top-cell5 {
-    grid-row: 1 / span 1;
-    grid-column: 5 / span 1;
-    background-color: #060d14ff;
-    color: white;
-}
-
-.top-cell6 {
-    grid-row: 1 / span 1;
-    grid-column: 6  / span 1;
-    background-color: #060d14ff;
-    color: white;
-}
-
-.top-cell1:hover, .top-cell2:hover, .top-cell3:hover, .top-cell4:hover, .top-cell5:hover, .top-cell6:hover {
-    background-color: #2384d5ff;
-}
 
 #color-head {
     grid-row: 2 / span 1;

@@ -59,6 +59,27 @@
         }
     }
 
+    function night() {
+        if(document.querySelector('.logo-cell1').style.color === 'black') {
+            document.getElementById("kontener").style.background = 'linear-gradient(55deg, rgba(0,23,41,1) 0%, rgba(0,65,119,1) 100%)';
+            document.querySelector('.logo-cell1').style.color = 'white';
+            document.getElementById('barclicked').src = 'bar-white.png';
+            document.querySelector('.banner-bottom').style.color = 'white';
+            document.getElementById('moonclicked').src = 'moon-white.png';
+            document.getElementById('leftclicked').src = 'left-white.png';
+            document.getElementById('rightclicked').src = 'right-white.png';
+        } else {
+            document.getElementById("kontener").style.background = 'rgb(255,255,255)';
+            document.querySelector('.logo-cell1').style.color = 'black';
+            document.getElementById('barclicked').src = 'bar.png';
+            document.querySelector('.banner-bottom').style.color = 'black';
+            document.getElementById('moonclicked').src = 'moon.png';
+            document.getElementById('leftclicked').src = 'left.png';
+            document.getElementById('rightclicked').src = 'right.png';
+        }
+    }
+
+
     function setPage(number) {
         document.querySelectorAll('.title-option').forEach(function(element) {
         element.style.display = 'none';});

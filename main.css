@@ -20,7 +20,6 @@ html, body {
 }
 
 #banner {
-    background-color: white;
     grid-template-columns: 30px 1fr 3fr 4fr 7fr 7fr;
     grid-template-rows: 40px 1fr 1fr 1fr 10px;
     display: grid;
@@ -105,12 +104,16 @@ html, body {
     grid-row-start: 1;
 }
 
+.banner-bottom-cell1:hover, .banner-bottom-cell2:hover, .banner-bottom-cell3:hover {
+    color: #30363cff;
+}
+
 #footer {
     /* background-color: blue; */
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     grid-template-rows: 10px 1fr 10px 30px;
-    grid-template-columns: 210px 5fr 1fr 2fr 5fr 150px;
+    grid-template-columns: 30px 180px 5fr 1fr 2fr 5fr 150px;
     display: grid;
 }
 
@@ -122,27 +125,53 @@ html, body {
 
 .rotate-left {
     grid-row: 1 / span 3;
-    grid-column: 2 / span 1;
-    background-color: white;
+    grid-column: 3 / span 1;
 }
 
 .rotate-right {
     grid-row: 1 / span 3;
-    grid-column: 5 / span 1;
-    background-color: white;
+    grid-column: 6 / span 1;
 }
 
-.rotate-left img, .rotate-right img{
+.rotate-left img, .rotate-right img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
+
+.rotate-left:hover img.hover-left {
+    content: url('left-hover.png'); /* Zmieniony obraz na hover */
+}
+
+.rotate-right:hover img.hover-right {
+    content: url('right-hover.png'); /* Zmieniony obraz na hover */
+}
+
+#moon {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1.75em;
+    padding-left: 15px;
+}
+
+#moon img {
     width: 50%;
     height: auto;
     object-fit: contain;
+}
+
+#moon:hover img.hover-moon {
+    content: url('moon-hover.png'); /* Zmieniony obraz na hover */
 }
 
 #buy
 {
     background-color: #ff3030ff;
     grid-row: 2 / span 1;
-    grid-column: 3 / span 1;
+    grid-column: 4 / span 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +182,7 @@ html, body {
 {
     background-color: #942a2aff;
     grid-row: 2 / span 1;
-    grid-column: 4 / span 1;
+    grid-column: 5 / span 1;
     display: flex;
     align-items: center;
     justify-content: center;

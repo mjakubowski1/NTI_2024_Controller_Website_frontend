@@ -37,21 +37,32 @@
         </div>
         <div id="panel">Panel
             <div id="taskbar">
-                <div class="topbox task-cell1"><img src="pointer.png" alt="Pointer"></div>
-                <div class="topbox task-cell2"><img src="fill.png" alt="Fill"></div>
-                <div class="topbox task-cell3"><img src="undo.png" alt="Undo"></div>
-                <div class="topbox task-cell4"><img src="redo.png" alt="Redo"></div>
-                <div class="topbox task-cell5"><img src="moon.png" alt="Moon"></div>
-                <div class="topbox task-cell6"><img src="shop.png" alt="Shop"></div>
+                <div class="task-cell1" onclick="setTab(1)">
+                    <div class="topbox task-logo"><img src="type.png" alt="Type"></div>
+                    <div class="topbox task-text">TYPE</div>    
+                </div>
+                <div class="task-cell2" onclick="setTab(2)">
+                    <div class="topbox task-logo"><img src="content.png" alt="Content"></div>
+                    <div class="topbox task-text">CONTENT</div>    
+                </div>
+                <div class="task-cell3" onclick="setTab(3)">
+                    <div class="topbox task-logo"><img src="buttons.png" alt="Buttons"></div>
+                    <div class="topbox task-text">BUTTONS</div>    
+                </div>
+                <div class="task-cell4" onclick="setTab(4)">
+                    <div class="topbox task-logo"><img src="cable.png" alt="Cable"></div>
+                    <div class="topbox task-text">CABLE</div>    
+                </div>
+                <div class="task-cell5" onclick="setTab(5)">
+                    <div class="topbox task-logo"><img src="account.png" alt="Account"></div>
+                    <div class="topbox task-text">ACCOUNT</div>    
+                </div>
+                <div class="task-cell6" onclick="setTab(6)">
+                    <div class="topbox task-logo"><img src="shop.png" alt="Shop"></div>
+                    <div class="topbox task-text">ORDER</div>
+                </div>
             </div>
-            <div id="topbar">
-                <div class="topbox2 top-cell1" onclick="setTab(1)">TYPE</div>
-                <div class="topbox2 top-cell2" onclick="setTab(2)">CONTENT</div>
-                <div class="topbox2 top-cell3" onclick="setTab(3)">BUTTONS</div>
-                <div class="topbox2 top-cell4" onclick="setTab(4)">CABLE</div>
-                <div class="topbox2 top-cell5" onclick="setTab(5)">ACCOUNT</div>
-                <div class="topbox2 top-cell6" onclick="setTab(6)">ORDER</div>
-            </div>
+            
             <div id="list">
                 <div class="type-cell1 list-option">
                     <div class="topbox list-logo"><img src="list1.png"></div>
@@ -90,14 +101,16 @@
                 <div id ="account-title">
                     <a id ="account-emoji">👤</a>
                     <a id ="account-text">ACCOUNT</a>
+                    <a id ="account-emoji-success">✅</a>
+                    <a id ="account-text-success">LOGIN SUCCESSFUL</a>
                 </div>
                 <form id="loginForm">
                     <label for="username">USERNAME</label><br>
                     <input type="text" id="username" name="username" required><br><br>
-        
+                
                     <label for="password">PASSWORD</label><br>
                     <input type="password" id="password" name="password" required><br><br>
-        
+                
                     <button type="submit" id="login">LOGIN</button>
                     <div class="error-message" id="error-message"></div>
                 </form>
