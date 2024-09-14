@@ -85,6 +85,14 @@
         element.style.display = 'none';});
 
         document.querySelector(`.title${number}`).style.display = 'grid';
+        if(number == 1) {
+            document.querySelector(`.contact`).style.display = 'none';
+        }
+        else if(number == 2) {
+            document.querySelector(`.contact`).style.display = 'grid';
+        } else {
+            document.querySelector(`.contact`).style.display = 'none';
+        }
     }
 
     function setTab(number) {
