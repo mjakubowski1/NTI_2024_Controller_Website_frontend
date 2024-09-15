@@ -97,19 +97,26 @@
 
 
     function setPage(number) {
-        document.querySelectorAll('.title-option').forEach(function(element) {
-        element.style.display = 'none';});
+    document.querySelectorAll('.title-option').forEach(function(element) {
+        element.style.display = 'none';
+    });
 
-        document.querySelector(`.title${number}`).style.display = 'grid';
-        if(number == 1) {
-            document.querySelector(`.contact`).style.display = 'none';
-        }
-        else if(number == 2) {
-            document.querySelector(`.contact`).style.display = 'grid';
-        } else {
-            document.querySelector(`.contact`).style.display = 'none';
-        }
+    document.querySelector(`.title${number}`).style.display = 'grid';
+    
+    if (number == 1) {
+        document.querySelector('.contact').style.display = 'none';
+        document.querySelector('.help').style.display = 'none';
+    } else if (number == 2) {
+        document.querySelector('.contact').style.display = 'grid';
+        document.querySelector('.help').style.display = 'none';
+    } else if (number == 3) {
+        document.querySelector('.contact').style.display = 'none';
+        document.querySelector('.help').style.display = 'grid';
+    } else {
+        document.querySelector('.contact').style.display = 'none';
+        document.querySelector('.help').style.display = 'none'; 
     }
+}
 
 function setTab(number) {
     currentTab = number;
