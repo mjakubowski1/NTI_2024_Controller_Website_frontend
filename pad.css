@@ -1,4 +1,4 @@
-#pad {
+#pad, #pad1 {
     /* background-color: green; */
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -26,6 +26,15 @@
     grid-template-rows: 1fr 2fr 3fr 3fr 3fr;
     grid-template-columns: 50px 1fr 50px;
     /* transition: background-color 2s ease; */
+}
+
+.help {
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 2;
+    background-color: #060d14d3;
+    display: none;
+    grid-template-rows: 1fr 2fr 3fr 3fr 3fr;
+    grid-template-columns: 50px 1fr 50px;
 }
 
 .contact-head {
@@ -98,3 +107,88 @@
     object-fit: contain;
     background-color: #201e20;
 }
+
+.help {
+        grid-row: 2 / span 2;
+        grid-column: 2 / span 2;
+        background-color: #66CC667F;
+        display: none;
+        grid-template-rows: auto auto 1fr;
+        grid-template-columns: 50px 1fr 50px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .help-head {
+        grid-row: 1 / span 1;
+        grid-column: 2 / span 1;
+        display: grid;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .help-head1, .help-head2, .help-head3 {
+        margin: 0;
+        font-size: 2.75em;
+    }
+
+    .help-head1 {
+        font-size: 2.75em;
+    }
+
+    .help-head2 {
+        font-size: 2.5em;
+    }
+
+    .help-head3 {
+        font-size: 2em;
+    }
+
+    .help-form {
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 1;
+        display: grid;
+        gap: 15px;
+        overflow: auto;
+    }
+
+    .form-group {
+        display: grid;
+        gap: 10px;
+    }
+
+    .form-group label {
+        font-size: 1.75em;
+        color: #fff; /
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .form-group input[type="submit"] {
+        background-color: #66cc66;
+        border: none;
+        color: white;
+        font-size: 1.75em;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-group input[type="submit"]:hover {
+        background-color: #55b355;
+    }

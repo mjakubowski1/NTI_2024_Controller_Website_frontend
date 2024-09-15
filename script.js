@@ -97,19 +97,26 @@
 
 
     function setPage(number) {
-        document.querySelectorAll('.title-option').forEach(function(element) {
-        element.style.display = 'none';});
+    document.querySelectorAll('.title-option').forEach(function(element) {
+        element.style.display = 'none';
+    });
 
-        document.querySelector(`.title${number}`).style.display = 'grid';
-        if(number == 1) {
-            document.querySelector(`.contact`).style.display = 'none';
-        }
-        else if(number == 2) {
-            document.querySelector(`.contact`).style.display = 'grid';
-        } else {
-            document.querySelector(`.contact`).style.display = 'none';
-        }
+    document.querySelector(`.title${number}`).style.display = 'grid';
+    
+    if (number == 1) {
+        document.querySelector('.contact').style.display = 'none';
+        document.querySelector('.help').style.display = 'none';
+    } else if (number == 2) {
+        document.querySelector('.contact').style.display = 'grid';
+        document.querySelector('.help').style.display = 'none';
+    } else if (number == 3) {
+        document.querySelector('.contact').style.display = 'none';
+        document.querySelector('.help').style.display = 'grid';
+    } else {
+        document.querySelector('.contact').style.display = 'none';
+        document.querySelector('.help').style.display = 'none'; 
     }
+}
 
 function setTab(number) {
     currentTab = number;
@@ -319,13 +326,13 @@ function toggleCable(option) {
         additionalPrice = 0;
     } else if (option === 'without') {
         withCable = false;
-        additionalPrice = 200;
+        additionalPrice = 50;
     }
     updateProductPrice(); // Aktualizuje cenę aktualnego produktu
 }
 
 function updateProductPrice() {
-    let basePrice = 1000;
+    let basePrice = 200;
     let totalProductPrice = basePrice + additionalPrice;
     document.getElementById('price').innerText = `${totalProductPrice} ZŁ`;
 }
@@ -336,9 +343,8 @@ function updateOrderTotal() {
 
 function placeOrder() {
     // Ustal cenę na podstawie aktualnej wartości additionalPrice
-    let basePrice = 1000;
+    let basePrice = 200;
     let price = basePrice + additionalPrice;
-
     const productImage = document.getElementById('product-image').src; // Obraz produktu
     const productName = document.querySelector('.type-cell3 .topbox.list-text').innerText; // Nazwa produktu
 
