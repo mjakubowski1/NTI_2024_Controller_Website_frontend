@@ -341,12 +341,26 @@ function updateOrderTotal() {
     document.getElementById('total-price').innerText = `Koszt całkowity: ${totalPrice} ZŁ`;
 }
 
+let selectedProduct = {
+    name: "",
+    image: ""
+};
+
+document.querySelectorAll('.list-option').forEach(option => {
+    option.addEventListener('click', function() {
+        selectedProduct.name = this.querySelector('.list-text').innerText;
+        selectedProduct.image = this.querySelector('img').src;
+    });
+});
+
+
 function placeOrder() {
-    // Ustal cenę na podstawie aktualnej wartości additionalPrice
     let basePrice = 200;
     let price = basePrice + additionalPrice;
-    const productImage = document.getElementById('product-image').src; // Obraz produktu
-    const productName = document.querySelector('.type-cell3 .topbox.list-text').innerText; // Nazwa produktu
+
+    // Użyj wybranego produktu z kliknięcia
+    const productName = selectedProduct.name; // Dynamiczna nazwa produktu
+    const productImage = selectedProduct.image; // Dynamiczny obraz produktu
 
     const product = {
         name: productName,
@@ -354,13 +368,13 @@ function placeOrder() {
         price: price
     };
 
-    // Dodaj produkt do listy zamówień
     orderItems.push(product);
     totalPrice += price;
 
     // Zaktualizuj listę zamówień
     updateOrderList();
 }
+
 
 function updateOrderList() {
     const orderList = document.getElementById('order-items');
