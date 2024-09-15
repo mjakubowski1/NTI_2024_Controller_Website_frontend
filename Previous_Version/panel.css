@@ -163,13 +163,15 @@
 .cable-cell1 {
     grid-row: 2 / span 1;
     grid-column: 1 / span 2;
-    font-size: 2em;
+    font-size: 1.2em;
+    margin-top: 50px;
 }
 
 .cable-cell2 {
-    grid-row: 3 / span 1;
+    grid-row: 4 / span 1;
     grid-column: 1 / span 2;
-    font-size: 2em;
+    font-size: 1.2em;
+    margin-bottom: 40px;
 }
 
 .type-cell1, .type-cell2, .type-cell3, .type-cell4, .type-cell5, .type-cell6, .cable-cell1, .cable-cell2 {
@@ -178,7 +180,7 @@
     display: grid;
 }
 
-.list-logo {
+.list-logo, .list-logo2 {
     grid-row: 2 / span 1;
     grid-column: 1 / span 3;
     /* background-color: black; */
@@ -186,6 +188,12 @@
 
 .list-logo img {
     width: 70%;
+    height: auto;
+    object-fit: contain;
+}
+
+.list-logo2 img {
+    width: 40%;
     height: auto;
     object-fit: contain;
 }

@@ -27,7 +27,7 @@
             </div>
         </div>
         <div id="pad">
-            <div class="padbox product"><img src="example.png" alt="Product Image"></div>
+            <div class="padbox product"><img id="product-image" src="GWB1.png" alt="Product Image"></div>
             <div class="contact">
                 <div class="contact-head">
                     <div class="contact-head1">ANY QUESTIONS?</div>
@@ -48,10 +48,10 @@
         </div>
         <div id="footer">
             <div id = "moon"><img src="moon.png" alt="Moon" class="hover-moon" id="moonclicked" onclick="night()"></div>
-            <div class = "footerbox rotate-left"><img src="left.png" alt="Left" class="hover-left" id="leftclicked"></div>
+            <div class = "footerbox rotate-left" onclick="rotateImage('left')"><img src="left.png" alt="Left" class="hover-left" id="leftclicked"></div>
             <div id="buy">BUY</div>
             <div id="price">1000 ZŁ</div>
-            <div class = "footerbox rotate-right"><img src="right.png" alt="Right" class="hover-right" id="rightclicked"></div>
+            <div class = "footerbox rotate-right" onclick="rotateImage('right')"><img src="right.png" alt="Right" class="hover-right" id="rightclicked"></div>
         </div>
         <div id="panel">
             <div id="taskbar">
@@ -82,29 +82,29 @@
             </div>
             
             <div id="list">
-                <div class="type-cell1 list-option">
-                    <div class="topbox list-logo"><img src="list1.png"></div>
-                    <div class="topbox list-text">PS5</div>
+                <div class="type-cell1 list-option" data-model="GBW1.png">
+                    <div class="topbox list-logo"><img src="GBW1.png"></div>
+                    <div class="topbox list-text">X CLEAN BLACK</div>
                 </div>
-                <div class="type-cell2 list-option">
-                    <div class="topbox list-logo"><img src="list2.png"></div>
-                    <div class="topbox list-text">XBOX ONE</div>
+                <div class="type-cell2 list-option" data-model="PBW1.png">
+                    <div class="topbox list-logo"><img src="PBW1.png"></div>
+                    <div class="topbox list-text">P CLEAN BLACK</div>
                 </div>
-                <div class="type-cell3 list-option">
-                    <div class="topbox list-logo"><img src="list3.png"></div>
-                    <div class="topbox list-text">SWITCH</div>
+                <div class="type-cell3 list-option" data-model="GWB1.png">
+                    <div class="topbox list-logo"><img src="GWB1.png"></div>
+                    <div class="topbox list-text">X CLEAN WHITE</div>
                 </div>
-                <div class="type-cell4 list-option">
-                    <div class="topbox list-logo"><img src="list4.png"></div>
-                    <div class="topbox list-text">WII U</div>
+                <div class="type-cell4 list-option" data-model="PWB1.png">
+                    <div class="topbox list-logo"><img src="PWB1.png"></div>
+                    <div class="topbox list-text">X CLEAN WHITE</div>
                 </div>
-                <div class="type-cell5 list-option">
-                    <div class="topbox list-logo"><img src="list5.png"></div>
-                    <div class="topbox list-text">PS4</div>
+                <div class="type-cell5 list-option" data-model="GWR1.png">
+                    <div class="topbox list-logo"><img src="GWR1.png"></div>
+                    <div class="topbox list-text">X RED WHITE</div>
                 </div>
-                <div class="type-cell6 list-option">
-                    <div class="topbox list-logo"><img src="list6.png"></div>
-                    <div class="topbox list-text">XBOX 360</div>
+                <div class="type-cell6 list-option" data-model="PBE1.png">
+                    <div class="topbox list-logo"><img src="PBE1.png"></div>
+                    <div class="topbox list-text">P GREEN BLACK</div>
                 </div>
                 <div class="cable-cell1 list-option">
                     <div class="topbox list-logo2"><img src="cable.png"></div>
@@ -137,16 +137,17 @@
             <div id="colors">
                 <div id="color-head">COLOR</div>
                 <div id="colorbar">
-                    <div class="colorbox color-cell1">◯</div>
-                    <div class="colorbox color-cell2">◯</div>
-                    <div class="colorbox color-cell3">◯</div>
-                    <div class="colorbox color-cell4">◯</div>
-                    <div class="colorbox color-cell5">◯</div>
-                    <div class="colorbox color-cell6">◯</div>
+                    <div class="colorbox color-cell1" onclick="setColor('W')">◯</div>
+                    <div class="colorbox color-cell2" onclick="setColor('G')">◯</div>
+                    <div class="colorbox color-cell3" onclick="setColor('B')">◯</div>
+                    <div class="colorbox color-cell4" onclick="setColor('R')">◯</div>
+                    <div class="colorbox color-cell5" onclick="setColor('E')">◯</div>
+                    <div class="colorbox color-cell6" onclick="setColor('L')">◯</div>
                 </div>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="pad_controller.js"></script>
 </body>
 </html>
