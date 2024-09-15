@@ -1,0 +1,142 @@
+/* Główna sekcja zamówień */
+#order {
+    background-color: #949494;
+    /*border-radius: 15px;*/
+    padding: 120px;
+    max-width: 700px;
+    min-height: 770px; /* Dodaje minimalną wysokość */
+    position: relative; /* Umożliwia użycie absolutnego pozycjonowania dla dzieci */
+    top: 100px;
+    left: 15px;
+    margin: 30px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Dzieli sekcje na: nagłówek, lista, cena */
+    gap: 20px; /* Przerwa między sekcjami */
+}
+
+/* Nagłówek sekcji zamówień */
+#order h2 {
+    grid-row: 1;
+    text-align: center;
+    font-size: 26px;
+    position: relative; /* Umożliwia użycie absolutnego pozycjonowania dla dzieci */
+    bottom: 60px;
+    margin: 0; /* Usunięcie domyślnego marginesu */
+    color: #333;
+    font-weight: bold;
+}
+
+/* Lista przedmiotów zamówionych */
+#order-items {
+    grid-row: 2;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Usunięcie marginesów */
+    overflow-y: auto; /* Umożliwia przewijanie, jeśli lista jest zbyt długa */
+}
+
+/* Pojedynczy element zamówienia */
+#order-items li {
+    background-color: #f9f9f9;
+    padding: 0px;
+    border-radius: 3px;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+#order-items li:hover {
+    transform: scale(1.02);
+}
+
+/* Stylowanie obrazka produktu */
+#order-items img {
+    border-radius: 5px;
+}
+
+/* Stylowanie tekstu w liście */
+#order-items span {
+    flex-grow: 1;
+    margin-left: 6px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Stylowanie przycisku "Usuń" */
+#order-items button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Stylowanie przycisku "Usuń" przy najechaniu */
+#order-items button:hover {
+    background-color: #c0392b;
+}
+
+/* Stylowanie przycisku "Usuń" podczas kliknięcia */
+#order-items button:active {
+    background-color: #a93226;
+}
+
+
+/* Cena sumaryczna */
+#total-price {
+    grid-row: 3;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    position: relative; /* Umożliwia użycie absolutnego pozycjonowania dla dzieci */
+    top: 20px;
+    margin: 0; /* Usunięcie marginesu */
+    color: #333;
+}
+
+/* Przycisk złożenia zamówienia */
+#place-order-btn {
+    position: absolute; /* Umożliwia precyzyjne pozycjonowanie */
+    bottom: 20px; /* Odległość od dołu sekcji */
+    left: 50%; /* Wyśrodkowanie poziome */
+    transform: translateX(-50%); /* Wyśrodkowanie poziome z uwzględnieniem szerokości */
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    /*border-radius: 10px;*/
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90%; /* Ustawia szerokość przycisku */
+}
+
+#place-order-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Animacja kliknięcia */
+#place-order-btn:active {
+    background-color: #1f6f93;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    #order {
+        padding: 15px;
+    }
+
+    #place-order-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

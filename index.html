@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="pad.css">
     <link rel="stylesheet" href="panel.css">
+    <link rel="stylesheet" href="order.css">
 </head>
 <body>
     <div id="kontener">
@@ -49,7 +50,7 @@
         <div id="footer">
             <div id = "moon"><img src="moon.png" alt="Moon" class="hover-moon" id="moonclicked" onclick="night()"></div>
             <div class = "footerbox rotate-left" onclick="rotateImage('left')"><img src="left.png" alt="Left" class="hover-left" id="leftclicked"></div>
-            <div id="buy">BUY</div>
+            <div id="buy" onclick="placeOrder()">BUY</div>
             <div id="price">1000 ZŁ</div>
             <div class = "footerbox rotate-right" onclick="rotateImage('right')"><img src="right.png" alt="Right" class="hover-right" id="rightclicked"></div>
         </div>
@@ -106,13 +107,13 @@
                     <div class="topbox list-logo"><img src="PBE1.png"></div>
                     <div class="topbox list-text">P GREEN BLACK</div>
                 </div>
-                <div class="cable-cell1 list-option">
+                <div class="cable-cell1 list-option"onclick="toggleCable('with')">
                     <div class="topbox list-logo2"><img src="cable.png"></div>
                     <div class="topbox list-text">WITH CABLE</div>
                 </div>
-                <div class="cable-cell2 list-option">
+                <div class="cable-cell2 list-option"onclick="toggleCable('without')">
                     <div class="topbox list-logo2"><img src="wireless.png"></div>
-                    <div class="topbox list-text">WITHOUT CABLE</div>
+                    <div class="topbox list-text">WITHOUT CABLE (+200)</div>
                 </div>
             </div>
             <div id="account">
@@ -133,7 +134,13 @@
                     <div class="error-message" id="error-message"></div>
                 </form>
             </div>
-            <div id="order"></div>
+            <div id="order">
+                <h2 id ="order-title">Zamówienia:</h2>
+                <ul id="order-items"></ul>
+                <p id="total-price">Koszt całkowity: 0 zł</p>
+                <button id="place-order-btn" onclick="return false;">Zamów</button>
+            </div>
+            
             <div id="colors">
                 <div id="color-head">COLOR</div>
                 <div id="colorbar">

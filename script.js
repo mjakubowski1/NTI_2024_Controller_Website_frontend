@@ -4,8 +4,7 @@
     let currentButtonsColor = 'W'; // Domyślny kolor przycisków jako skrót
     let currentBodyColor = 'B'; // Domyślny kolor obudowy jako skrót
     let currentCamera = 1; // 1: Front, 2: Side, 3: Top
-
-    
+     
     document.querySelector(`.task-cell1`).classList.add('active');
 
     document.querySelectorAll('.list-option').forEach(function(element) {
@@ -24,6 +23,12 @@
 
         login(username, password);
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setTab(1); // Ustaw domyślną zakładkę na start
+    });
+    
+
 
     function login(username, password) {
         console.log('Username:', username);
@@ -68,7 +73,9 @@
     }
 
     function night() {
-        if(document.querySelector('.logo-cell1').style.color === 'black') {
+        const isDarkMode = document.querySelector('.logo-cell1').style.color === 'black';
+    
+        if (isDarkMode) {
             document.getElementById("kontener").style.background = 'linear-gradient(55deg, rgba(0,23,41,1) 0%, rgba(0,65,119,1) 100%)';
             document.querySelector('.logo-cell1').style.color = 'white';
             document.getElementById('barclicked').src = 'bar-white.png';
@@ -86,6 +93,7 @@
             document.getElementById('rightclicked').src = 'right.png';
         }
     }
+    
 
 
     function setPage(number) {
@@ -103,12 +111,12 @@
         }
     }
 
-    function setTab(number) {
-        currentTab = number;
-        for (let i = 1; i <= 6; i++) {
-            document.querySelector(`.task-cell${i}`).classList.remove('active');
-        }
-        document.querySelector(`.task-cell${number}`).classList.add('active');
+function setTab(number) {
+    currentTab = number;
+    for (let i = 1; i <= 6; i++) {
+        document.querySelector(`.task-cell${i}`).classList.remove('active');
+    }
+    document.querySelector(`.task-cell${number}`).classList.add('active');
 
 // Ukrywaj lub pokazuj elementy na podstawie zakładki
 document.querySelectorAll('.list-option').forEach(element => {
@@ -190,6 +198,9 @@ if (number == 6) {
 updateColorOptions();
     }
 
+
+//Funkcje do ustawiania kolorów padów i rotacji
+
     // Funkcja do zmiany koloru
 function setColor(color) {
     if (currentTab === 2) {
@@ -214,11 +225,18 @@ function rotateImage(direction) {
 
 // Funkcja do aktualizacji obrazu
 function updateImage() {
-    // Generowanie pełnej nazwy pliku
+    // Zakładka CABLE nie zmienia obrazu pada, więc nie włączamy jej w generowanie nazwy pliku
+    if (currentTab === 4) {
+        // W zakładce CABLE nie zmieniamy obrazu, tylko cenę
+        return; 
+    }
+    
+    // Generowanie pełnej nazwy pliku na podstawie globalnych zmiennych, nie obejmuje opcji CABLE
     const fileName = `${currentType}${currentButtonsColor}${currentBodyColor}${currentCamera}.png`;
     document.getElementById('product-image').src = fileName;
     console.log(`Updated image to: ${fileName}`);
 }
+
 
 // Funkcja do aktualizacji opcji kolorów
 function updateColorOptions() {
@@ -274,9 +292,96 @@ function updateValuesFromModel(model) {
 // Obsługuje kliknięcia w listę opcji
 document.querySelectorAll('.list-option').forEach(item => {
     item.addEventListener('click', function() {
-        const model = this.getAttribute('data-model');
-        document.getElementById('product-image').src = model;
-        updateValuesFromModel(model); // Zaktualizuj wartości na podstawie wybranego modelu
-        console.log(`Selected model: ${model}`);
+        // Sprawdź, czy aktualna zakładka to nie jest zakładka 4 (CABLE)
+        if (currentTab !== 4) {
+            const model = this.getAttribute('data-model');
+            document.getElementById('product-image').src = model;
+            updateValuesFromModel(model); // Zaktualizuj wartości na podstawie wybranego modelu
+            console.log(`Selected model: ${model}`);
+        } else {
+            console.log('Zakładka CABLE - obraz nie zmieniany');
+        }
     });
 });
+
+let withCable = true; // Domyślnie wybrany z kablem
+let additionalPrice = 0; // Dodatkowa cena w zależności od opcji
+let orderItems = [];
+let totalPrice = 0;
+
+// Początkowa aktualizacja ceny
+updateProductPrice();
+updateOrderTotal();
+
+function toggleCable(option) {
+    if (option === 'with') {
+        withCable = true;
+        additionalPrice = 0;
+    } else if (option === 'without') {
+        withCable = false;
+        additionalPrice = 200;
+    }
+    updateProductPrice(); // Aktualizuje cenę aktualnego produktu
+}
+
+function updateProductPrice() {
+    let basePrice = 1000;
+    let totalProductPrice = basePrice + additionalPrice;
+    document.getElementById('price').innerText = `${totalProductPrice} ZŁ`;
+}
+
+function updateOrderTotal() {
+    document.getElementById('total-price').innerText = `Koszt całkowity: ${totalPrice} ZŁ`;
+}
+
+function placeOrder() {
+    // Ustal cenę na podstawie aktualnej wartości additionalPrice
+    let basePrice = 1000;
+    let price = basePrice + additionalPrice;
+
+    const productImage = document.getElementById('product-image').src; // Obraz produktu
+    const productName = document.querySelector('.type-cell3 .topbox.list-text').innerText; // Nazwa produktu
+
+    const product = {
+        name: productName,
+        image: productImage,
+        price: price
+    };
+
+    // Dodaj produkt do listy zamówień
+    orderItems.push(product);
+    totalPrice += price;
+
+    // Zaktualizuj listę zamówień
+    updateOrderList();
+}
+
+function updateOrderList() {
+    const orderList = document.getElementById('order-items');
+    orderList.innerHTML = ''; // Czyści listę zamówień
+
+    // Dodaj każdy produkt z orderItems
+    orderItems.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" width="50" height="50">
+            <span>${item.name} - ${item.price} ZŁ</span>
+            <button onclick="removeOrderItem(${index})">Usuń</button>
+        `;
+        orderList.appendChild(listItem);
+    });
+
+    // Zaktualizuj cenę całkowitą
+    updateOrderTotal();
+}
+
+function removeOrderItem(index) {
+    // Odejmij cenę produktu od łącznej ceny
+    totalPrice -= orderItems[index].price;
+
+    // Usuń produkt z listy zamówień
+    orderItems.splice(index, 1);
+
+    // Zaktualizuj widok listy zamówień
+    updateOrderList();
+}
