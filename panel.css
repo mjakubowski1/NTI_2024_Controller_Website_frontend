@@ -3,8 +3,9 @@
     grid-row: 1 / 4;
     grid-column: 2 / 3;
     grid-template-columns: 10px repeat(6, 1fr) 0.25fr 30px;
-    grid-template-rows: 40px 0.75fr 0.5fr 1.5fr repeat(10, 1fr) 0.75fr 40px;
+    grid-template-rows: 40px 1fr 0.5fr 1.5fr repeat(10, 1fr) 0.75fr 40px;
     display: grid;
+
 }
 
 .topbox {
@@ -21,8 +22,6 @@
     column-gap: 2px;
     display: grid; 
     font-size: 0.75em;
-    position: relative; /* Umożliwia użycie absolutnego pozycjonowania dla dzieci */
-    top: 40px;
 }
 
 #list {

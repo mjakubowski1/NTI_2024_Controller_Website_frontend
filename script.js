@@ -342,8 +342,8 @@ function updateOrderTotal() {
 }
 
 let selectedProduct = {
-    name: "",
-    image: ""
+    name: "COSMIC DRIVE",
+    image: "GWB1.png"
 };
 
 document.querySelectorAll('.list-option').forEach(option => {
